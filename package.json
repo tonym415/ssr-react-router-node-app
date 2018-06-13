@@ -1,0 +1,38 @@
+{
+  "name": "ssr-react-router-node-app",
+  "version": "1.0.0",
+  "description": "isomorphic js tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel ./app -d build",
+    "build:watch": "babel ./app -d build --watch",
+    "build:client": "webpack --config ./webpack.config.js/",
+    "build:watch:client": "webpack --config ./webpack.config.js/ --watch",
+    "build:prod": "npm run build && npm run build:client",
+    "start": "npm run build:prod && NODE_ENV=production node ./build/server/index.js",
+    "start:dev": "parallelshell -v \"npm run build:watch\" \"npm run build:watch:client\" \"nodemon ./build/server/index.js\""
+  },
+  "author": "Antonio Moses",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "parallelshell": "^3.0.2",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^1.17.5",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.3"
+  }
+}
