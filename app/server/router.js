@@ -9,14 +9,14 @@ import App from '../components/App';
 
 export default function router(req, res) {
   const match = routes.reduce((acc, route) => matchPath(req.url, { path: route, exact: true }) || acc, null);
-  console.dir(match)
+  //console.dir(match)
   var director = {};
   if (!match) {
     res.status(404).send('What\'s really good!?!?!?!?!');
     return;
   }else{
     var p = match.params;
-    console.log(Object.keys(p))
+    // console.log(Object.keys(p))
     if (Object.keys(p).length > 0 ){
       if (Object.keys(p).indexOf('ability') >= 0){
           director.service = "ability";
@@ -35,8 +35,6 @@ export default function router(req, res) {
 
     }
   }
-  console.log('director: ')
-  console.dir(director)
   return getPokemon.init(director)
     .then(resp => {
       const pokemon = resp.data;

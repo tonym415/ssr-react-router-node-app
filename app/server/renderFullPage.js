@@ -3,7 +3,7 @@ export default function renderFullPage(html, preloadedState) {
   <!doctype html>
   <html>
     <head>
-      <title> Your SSR React Router Node App initialised with Pokemon data!</title>
+      <title> Router Node App with Pokemon data!</title>
     </head>
     <body>
       <div id="root">${html}</div>

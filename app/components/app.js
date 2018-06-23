@@ -6,7 +6,7 @@ import {
   Switch
 } from 'react-router-dom';
 
-import ListOptions from './List'
+import List from './List'
 import Home from './Home'
 export default function App(props) {
   const { pokemon } = props;
@@ -17,10 +17,10 @@ export default function App(props) {
         Your React Node is Ballin!
         <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/pokemon" exact render={(location) => (<ListOptions.ListAll pokemon={pokemon} location={location} />)} />
-            <Route path="/ability" exact render={(location) => (<ListOptions.ListAll pokemon={pokemon} location={location} />)} />
-            <Route path="/pokemon/:pokemon" render={(location) => (<ListOptions.ListOne pokemon={pokemon} location={location} />)} />
-            <Route path="/ability/:ability" render={(location) => (<ListOptions.ListAbility pokemon={pokemon} location={location} />)} />
+            <Route path="/pokemon" exact render={(location) => (<List pokemon={pokemon} location={location} />)} />
+            <Route path="/ability" exact render={(location) => (<List pokemon={pokemon} location={location} />)} />
+            <Route path="/pokemon/:pokemon" render={(location) => (<List pokemon={pokemon} location={location} />)} />
+            <Route path="/ability/:ability" render={(location) => (<List pokemon={pokemon} location={location} />)} />
         </Switch>
     </div>
   )

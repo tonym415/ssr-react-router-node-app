@@ -17,7 +17,7 @@ const getPokemon = {
         break;
     }
 
-    var req = `${baseUrl}/${constr.value}/?limit=10`
+    var req = `${baseUrl}/${constr.value}/?limit=100`
     console.log("Request: " + req)
     return request.get(req)
   }
